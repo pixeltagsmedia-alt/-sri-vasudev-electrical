@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Vasudev Electricals | Products</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'brand-bg': '#131316',
+          'brand-dark': '#0d0e11',
+          'brand-red': '#ff5c67',
+          'brand-primary': '#b4c5fd',
+          'brand-accent': '#ffb3b3',
+          'brand-surface': '#1b1b1f',
+          'brand-surface-high': '#292a2d'
+        },
+        fontFamily: {
+          sans: ['Hanken Grotesk','ui-sans-serif','system-ui','sans-serif'],
+          display: ['Sora','sans-serif'],
+          mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  body { background-color: #131316; color: #e4e2e6; -webkit-font-smoothing: antialiased; }
+  .glass-panel-heavy { background: rgba(20,20,24,0.9); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid rgba(255,255,255,0.08); }
+  .beveled-glow { position: relative; }
+  .beveled-glow::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+  .h-4\.5 { height: 1.125rem; } .w-4\.5 { width: 1.125rem; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
+  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  select { appearance: none; }
+</style>
+</head>
+<body class="min-h-screen relative font-sans flex flex-col justify-between select-none">
+
+<div class="absolute top-[5%] left-[20%] w-[350px] h-[350px] rounded-full bg-[#1b2545]/20 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#392e40]/10 blur-[120px] pointer-events-none"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 w-full bg-brand-bg/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+    <a href="home.html" class="flex items-center space-x-2 cursor-pointer group">
+      <div class="flex items-center justify-center w-9 h-9 rounded-md bg-brand-red text-brand-bg font-display font-black text-lg tracking-tighter">SV</div>
+      <div class="flex flex-col">
+        <span class="font-display font-extrabold text-lg text-white tracking-wider group-hover:text-brand-accent transition-colors">SRI VASUDEV</span>
+        <span class="text-[9px] font-mono font-bold text-brand-primary tracking-[0.25em] -mt-1 uppercase">Electricals &amp; Solutions</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="home.html" class="font-sans font-medium text-sm tracking-wide text-white/60 hover:text-white transition-all py-1">Home</a>
+      <a href="products.html" class="font-sans font-semibold text-sm tracking-wide text-white relative py-1">
+        Products
+        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-red rounded-full shadow-[0_0_8px_rgba(255,92,103,0.8)]"></div>
+      </a>
+      <a href="brands.html" class="font-sans font-medium text-sm tracking-wide text-white/60 hover:text-white transition-all py-1">Brands</a>
+      <a href="contact.html" class="font-sans font-medium text-sm tracking-wide text-white/60 hover:text-white transition-all py-1">Contact</a>
+    </nav>
+
+    <div class="flex items-center space-x-4">
+      <a href="tel:09849449925" class="hidden lg:flex items-center space-x-2 bg-gradient-to-r from-brand-red/10 to-brand-red/20 border border-brand-red/30 px-3.5 py-1.5 rounded text-xs font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all cursor-pointer">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        <span>098494 49925</span>
+      </a>
+
+      <div class="relative">
+        <button onclick="toggleSearch()" class="p-1.5 rounded hover:bg-white/5 transition-colors cursor-pointer" aria-label="Search items">
+          <svg class="w-5 h-5 text-white/85" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <div id="search-box" class="hidden absolute right-0 top-1/2 -translate-y-1/2 items-center bg-brand-surface border border-white/10 rounded-md px-2 py-1 w-48 md:w-64">
+          <input type="text" id="header-search-input" placeholder="Search switches, lighting..." class="bg-transparent border-none text-xs text-white focus:outline-none w-full" onkeydown="if(event.key==='Enter'){searchTerm=this.value; document.getElementById('searchInput').value=this.value; applyFilters(); toggleSearch();}">
+          <button onclick="toggleSearch()">
+            <svg class="w-3.5 h-3.5 text-white/50 hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <a href="contact.html#checklist" class="relative p-1.5 rounded hover:bg-white/5 transition-colors cursor-pointer flex items-center" aria-label="View Inquiry Cart">
+        <svg class="w-5 h-5 text-white/85" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-brand-red text-white text-[9px] font-bold rounded-full w-4.5 h-4.5 flex items-center justify-center shadow-[0_0_6px_rgba(255,92,103,0.6)]"></span>
+      </a>
+
+      <button onclick="toggleMenu()" class="p-1.5 rounded hover:bg-white/5 transition-colors md:hidden cursor-pointer" aria-label="Toggle menu">
+        <svg id="menu-icon-open" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" class="w-5 h-5 text-white hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-white/5 flex flex-col space-y-4 animate-fadeIn">
+    <a href="home.html" class="text-left font-sans font-semibold text-base py-2 px-3 rounded-md text-white/60 hover:bg-white/5 hover:text-white transition-colors">Home</a>
+    <a href="products.html" class="text-left font-sans font-semibold text-base py-2 px-3 rounded-md bg-brand-surface text-white border-l-4 border-brand-red">Products</a>
+    <a href="brands.html" class="text-left font-sans font-semibold text-base py-2 px-3 rounded-md text-white/60 hover:bg-white/5 hover:text-white transition-colors">Brands</a>
+    <a href="contact.html" class="text-left font-sans font-semibold text-base py-2 px-3 rounded-md text-white/60 hover:bg-white/5 hover:text-white transition-colors">Contact</a>
+    <div class="flex flex-col space-y-2 pt-2 px-3">
+      <a href="tel:09849449925" class="flex items-center justify-center space-x-2 bg-brand-red hover:bg-brand-red/90 text-white font-display font-semibold py-2.5 rounded-md text-sm transition-all shadow-[0_3px_10px_rgba(255,92,103,0.3)]">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        <span>Call store: 098494 49925</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-grow">
+<div class="max-w-[1280px] mx-auto px-6 py-10 pb-32 text-white">
+
+  <!-- Title -->
+  <div class="mb-8">
+    <span class="text-[11px] font-sans font-bold tracking-[0.25em] text-brand-red uppercase">CATALOGUE DISCOVERY</span>
+    <h1 class="font-display font-extrabold text-3xl sm:text-4xl mt-1 tracking-tight">Find Precision Materials</h1>
+    <p class="text-white/50 text-sm max-w-xl mt-2 leading-relaxed">
+      Select structural wiring, architectural spot luminaires, and luxury command switches to generate custom contractor quote requisitions.
+    </p>
+  </div>
+
+  <!-- Filter panel -->
+  <div class="flex flex-col xl:flex-row gap-4 items-center justify-between bg-[#1b1b1f] border border-white/5 p-4 rounded-xl mb-8">
+
+    <div id="category-buttons" class="flex flex-wrap gap-2 w-full xl:w-auto"></div>
+
+    <div class="flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
+      <div class="relative min-w-[200px]">
+        <select id="brandSelect" onchange="selectedBrandId = this.value || null; applyFilters();" class="w-full bg-white/5 border border-white/10 rounded-lg py-2 px-3.5 pr-8 text-xs text-white/80 focus:outline-none focus:border-brand-red cursor-pointer appearance-none">
+          <option value="">All Authorized Brands</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white/40 text-[10px]">▼</div>
+      </div>
+
+      <div class="relative w-full">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="h-4 w-4 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="Search product descriptions..." oninput="searchTerm=this.value; applyFilters();" class="w-full bg-white/5 border border-white/10 rounded-lg py-2 pl-9 pr-8 text-xs text-white/80 focus:outline-none focus:border-brand-red focus:bg-white/[0.08] transition-all">
+        <button onclick="document.getElementById('searchInput').value=''; searchTerm=''; applyFilters();" class="absolute inset-y-0 right-0 flex items-center pr-3">
+          <svg class="h-3.5 w-3.5 text-white/40 hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result count -->
+  <div class="flex items-center justify-between text-xs text-white/40 mb-6 px-1">
+    <span>Showing <b id="resultCount">0</b> precision electrical components</span>
+    <button id="clearFiltersBtn" onclick="clearFilters()" class="hidden text-brand-red hover:underline font-semibold cursor-pointer">Clear all filters</button>
+  </div>
+
+  <!-- Products grid -->
+  <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+  <!-- Empty state -->
+  <div id="emptyState" class="hidden text-center py-20 bg-[#1b1b1f]/50 border border-white/5 rounded-2xl flex flex-col items-center justify-center space-y-4">
+    <svg class="w-10 h-10 text-white/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <div class="flex flex-col">
+      <span class="font-display font-bold text-lg">No matching articles found</span>
+      <span class="text-xs text-white/40 max-w-sm mx-auto mt-1">Refine your searches, check spelling, or clear the "All Authorized Brands" filter.</span>
+    </div>
+    <button onclick="clearFilters()" class="text-xs font-semibold bg-brand-red text-white px-4 py-2 rounded-lg cursor-pointer">Reset Filters</button>
+  </div>
+
+</div>
+</main>
+
+<!-- ============ PRODUCT DETAIL MODAL ============ -->
+<div id="productModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-dark/85 backdrop-blur-md animate-fadeIn">
+  <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-brand-bg border border-white/10 rounded-2xl shadow-2xl glass-panel-heavy">
+
+    <button onclick="closeModal()" class="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-[#1b1b1f] hover:bg-white/5 text-white/60 hover:text-white transition-colors cursor-pointer">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="grid grid-cols-1 md:grid-cols-2">
+
+      <!-- Image side -->
+      <div class="bg-brand-dark/95 border-r border-white/5 p-6 flex flex-col justify-between">
+        <div>
+          <span id="modalBrand" class="text-[10px] font-mono text-brand-primary font-bold tracking-widest uppercase"></span>
+          <h2 id="modalName" class="font-display font-extrabold text-xl text-white tracking-tight mt-1 leading-snug"></h2>
+        </div>
+
+        <div class="w-full h-48 rounded-lg bg-brand-bg flex items-center justify-center p-2 my-4 relative overflow-hidden">
+          <img id="modalImage" src="" alt="" class="w-full h-full object-cover rounded-md" referrerpolicy="no-referrer">
+          <div id="ledIndicator" class="hidden absolute top-4 right-4 flex items-center space-x-1 bg-brand-dark/90 px-2 py-0.5 rounded text-[8px] font-mono border border-white/10">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+            <span>LED GLOW ACTIVE</span>
+          </div>
+        </div>
+
+        <div class="text-[10px] text-white/40 leading-relaxed font-sans">
+          * All components comply with relevant Indian Standards (BIS) and include the standard brand guarantee.
+        </div>
+      </div>
+
+      <!-- Specs side -->
+      <div class="p-6 md:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div>
+            <h4 class="text-xs font-mono text-white/40 tracking-wider uppercase mb-1">Product Description</h4>
+            <p id="modalDescription" class="text-white/80 text-xs leading-relaxed font-sans"></p>
+          </div>
+
+          <!-- Finish customizer -->
+          <div id="finishCustomizer" class="hidden bg-white/5 p-3 rounded-lg border border-white/5 space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-[11px] font-display font-extrabold tracking-wide">SPECIFY SWITCHPLATE FINISH</span>
+              <span id="activeFinishLabel" class="text-[9px] font-mono text-white/50"></span>
+            </div>
+            <div id="finishSwatches" class="flex gap-2"></div>
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-[10px] font-sans text-white/60">Include LED backlight indicator (+Rs.45)</span>
+              <button id="ledToggle" onclick="toggleLED()" class="w-9 h-5 rounded-full p-0.5 transition-colors cursor-pointer bg-brand-red">
+                <div id="ledKnob" class="bg-white w-4 h-4 rounded-full transition-transform translate-x-4"></div>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-mono text-white/40 tracking-wider uppercase mb-1.5">Technical Parameters</h4>
+            <div id="specsTable" class="border border-white/5 rounded-lg overflow-hidden divide-y divide-white/5 bg-[#1b1b1f]/35 text-xs"></div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between gap-3">
+          <div class="flex items-center border border-white/10 rounded-lg p-0.5 bg-[#1b1b1f]">
+            <button onclick="changeQty(-1)" class="px-2 py-1 hover:bg-white/5 text-sm cursor-pointer">-</button>
+            <span id="modalQty" class="w-8 text-center text-xs font-mono">1</span>
+            <button onclick="changeQty(1)" class="px-2 py-1 hover:bg-white/5 text-sm cursor-pointer">+</button>
+          </div>
+
+          <button onclick="addFromModal()" class="flex-1 flex items-center justify-center space-x-2 bg-brand-red hover:bg-brand-red/90 text-white font-display font-bold text-xs py-2.5 rounded-lg transition-transform cursor-pointer shadow-[0_3px_12px_rgba(255,92,103,0.3)]">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>ADD TO INQUIRY CHECKLIST</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-dark/95 text-white/70 border-t border-white/5 pt-16 pb-24 px-6 relative">
+  <div class="max-w-[1280px] w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+
+    <div class="md:col-span-5 flex flex-col items-start space-y-6">
+      <a href="home.html" class="flex items-center space-x-2 cursor-pointer group">
+        <div class="flex items-center justify-center w-9 h-9 rounded-md bg-brand-red text-brand-bg font-display font-black text-lg tracking-tighter">SV</div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-lg text-white tracking-wider group-hover:text-brand-accent transition-colors">SRI VASUDEV</span>
+          <span class="text-[9px] font-mono font-bold text-brand-primary tracking-[0.25em] -mt-1 uppercase">Electricals &amp; Solutions</span>
+        </div>
+      </a>
+      <p class="text-sm text-white/50 leading-relaxed font-sans max-w-sm">
+        Established as a cornerstone of electrical excellence, Sri Vasudev Electricals supplies premium components to the finest architectural projects across the region.
+      </p>
+      <div class="flex items-center space-x-3 pt-2">
+        <a href="https://srivasudevelectricals.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-brand-primary cursor-pointer transition-colors" aria-label="Official Website">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </a>
+        <button onclick="sharePage()" class="p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-brand-red cursor-pointer transition-colors" aria-label="Copy Link / Share">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51 15.42 17.49M15.41 6.51 8.59 10.49"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="md:col-span-3 flex flex-col items-start space-y-5">
+      <span class="text-xs font-sans font-black tracking-widest text-brand-primary uppercase">QUICK LINKS</span>
+      <div class="flex flex-col space-y-3.5 text-sm">
+        <a href="contact.html#terms-section" class="text-left text-white/50 hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+        <a href="contact.html#terms-section" class="text-left text-white/50 hover:text-white transition-colors cursor-pointer">Terms of Service</a>
+        <a href="contact.html#bulk-orders" class="text-left text-white/50 hover:text-white transition-colors cursor-pointer">Bulk Orders &amp; contractor Rates</a>
+        <a href="contact.html#store-locator" class="text-left text-white/50 hover:text-white transition-all hover:text-brand-primary flex items-center space-x-1 cursor-pointer">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 11 3 3L22 4"/></svg>
+          <span>Store Locator</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-4 flex flex-col items-start space-y-5 font-sans text-sm">
+      <span class="text-xs font-sans font-black tracking-widest text-brand-primary uppercase">CONTACT DETAILS</span>
+      <div class="flex flex-col space-y-4">
+        <a href="mailto:srivasudevelectricals@gmail.com" class="flex items-center space-x-3 group">
+          <svg class="w-4.5 h-4.5 text-brand-red shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-mono text-white/30 uppercase tracking-wider leading-none">Email Inquiry</span>
+            <span class="text-white/75 group-hover:text-white transition-colors">srivasudevelectricals@gmail.com</span>
+          </div>
+        </a>
+        <a href="tel:09849449925" class="flex items-center space-x-3 group">
+          <svg class="w-4.5 h-4.5 text-brand-red shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-mono text-white/30 uppercase tracking-wider leading-none">Mobile Hotline</span>
+            <span class="text-white/90 font-display font-black text-base group-hover:text-brand-accent transition-colors">098494 49925</span>
+          </div>
+        </a>
+        <div class="flex items-center space-x-3">
+          <svg class="w-4.5 h-4.5 text-brand-red shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-mono text-white/30 uppercase tracking-wider leading-none">Trading Hours</span>
+            <span class="text-white/75">Hours: Open · Closes 10 pm</span>
+          </div>
+        </div>
+        <a href="https://srivasudevelectricals.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 group">
+          <svg class="w-4.5 h-4.5 text-brand-red shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-mono text-white/30 uppercase tracking-wider leading-none">Official domain</span>
+            <span class="text-brand-primary group-hover:text-white flex items-center space-x-1 text-sm underline decoration-brand-primary/30 group-hover:decoration-white transition-colors">
+              <span>srivasudevelectricals.com</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="max-w-[1280px] w-full mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-white/30 gap-4">
+    <span>© 2024 Sri Vasudev Electricals. Precision in Power.</span>
+    <div class="flex items-center space-x-4">
+      <span>BIS Standard Approved</span>
+      <span>·</span>
+      <span>Authorized Distributor Channel</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOTTOM NAV ============ -->
+<div class="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-1 pointer-events-none flex justify-center">
+  <nav class="pointer-events-auto flex items-center justify-around w-full max-w-md bg-brand-bg/85 backdrop-blur-lg border border-white/10 rounded-full px-6 py-2.5 shadow-[0_-8px_32px_rgba(0,0,0,0.6)]">
+    <a href="home.html" class="flex flex-col items-center justify-center space-y-1 py-1 px-3.5 rounded-full transition-all duration-300 cursor-pointer text-white/40 hover:text-white/80">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span class="text-[9px] font-display font-black tracking-widest uppercase text-white/30">Home</span>
+    </a>
+    <a href="products.html" class="flex flex-col items-center justify-center space-y-1 py-1 px-3.5 rounded-full transition-all duration-300 cursor-pointer text-white scale-105">
+      <div class="text-brand-red scale-110 drop-shadow-[0_0_8px_rgba(255,92,103,0.5)]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></svg>
+      </div>
+      <span class="text-[9px] font-display font-black tracking-widest uppercase text-white">Products</span>
+    </a>
+    <a href="brands.html" class="flex flex-col items-center justify-center space-y-1 py-1 px-3.5 rounded-full transition-all duration-300 cursor-pointer text-white/40 hover:text-white/80">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <span class="text-[9px] font-display font-black tracking-widest uppercase text-white/30">Brands</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center justify-center space-y-1 py-1 px-3.5 rounded-full transition-all duration-300 cursor-pointer text-white/40 hover:text-white/80">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <span class="text-[9px] font-display font-black tracking-widest uppercase text-white/30">Contact</span>
+    </a>
+  </nav>
+</div>
+
+<script>
+/* ===================== DATA ===================== */
+const BRANDS = [
+  { id:'anchor', name:'Anchor by Panasonic', established:'1963', specialty:'Wiring Accessories & Switchgear', website:'https://lsin.panasonic.com/', description:"Panasonic Group company specializing in reliable wiring devices, modular switches, and high-safety domestic electrical fittings.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-2"><path d="M12,8 C12,5 15,3 20,3 C25,3 28,5 28,8 C28,10 26,12 23,13 L23,17 C27,17 31,19 33,22 C35,25 35,29 32,32 C29,35 24,36 20,36 C16,36 11,35 8,32 C5,29 5,25 7,22 C9,19 13,17 17,17 L17,13 C14,12 12,10 12,8 Z" opacity="0.15"/><path d="M20,6 L20,34 M13,20 L27,20 M14,13 A6,6 0 0,1 26,13" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><text x="38" y="25" font-family="Sora" font-size="16" font-weight="800" letter-spacing="0.05em">ANCHOR</text></svg>` },
+  { id:'finolex', name:'Finolex Cables', established:'1958', specialty:'Industrial & Domestic Wires', website:'https://finolex.com/', description:"India's prime developer of electrical and telecommunication cables, known globally for high-purity copper and multi-layered protection.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-2"><text x="5" y="26" font-family="Sora" font-size="20" font-weight="900" letter-spacing="0.12em">FINOLEX</text><rect x="106" y="10" width="8" height="18" fill="#FF5C67" rx="1"/><rect x="94" y="15" width="8" height="13" fill="currentColor" rx="1" opacity="0.6"/></svg>` },
+  { id:'havells', name:'Havells', established:'1958', specialty:'Premium Performance Appliances', website:'https://www.havells.com/', description:"Leading Fast Moving Electrical Goods (FMEG) brand powering homes with premium ceiling fans, designer lights, and smart home modules.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-1"><path d="M10,12 L20,12 L20,28 L10,28 Z" fill="#FF5C67"/><path d="M24,12 L34,12 L34,28 L24,28 Z" fill="currentColor"/><text x="40" y="26" font-family="Sora" font-size="15" font-weight="800" letter-spacing="0.05em">HAVELLS</text></svg>` },
+  { id:'kei', name:'KEI Industries', established:'1968', specialty:'Heavy Duty Cables & EHV', website:'https://www.kei-ind.com/', description:"Power transmission giants engineered for heavy-duty armored cables, extra high-voltage power lines, and industrial grids.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-2"><text x="10" y="28" font-family="Sora" font-size="28" font-weight="900" font-style="italic" letter-spacing="0.1em">KEI</text><line x1="85" y1="12" x2="110" y2="12" stroke="#FF5C67" stroke-width="3"/><line x1="90" y1="20" x2="110" y2="20" stroke="currentColor" stroke-width="2"/><line x1="95" y1="28" x2="110" y2="28" stroke="currentColor" stroke-width="1"/></svg>` },
+  { id:'legrand', name:'Legrand', established:'1865', specialty:'Luxury Home Automation & Switchgear', website:'https://www.legrand.co.in/', description:"Global specialist in electrical and digital building infrastructures, manufacturing premium modular switch ranges like Arteor and Myrius.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-2"><rect x="5" y="10" width="12" height="20" fill="none" stroke="currentColor" stroke-width="3"/><rect x="13" y="10" width="12" height="20" fill="none" stroke="#FF5C67" stroke-width="3"/><text x="35" y="26" font-family="Sora" font-size="16" font-weight="800" letter-spacing="0.02em">legrand</text></svg>` },
+  { id:'philips', name:'Philips', established:'1891', specialty:'Recessed & Architectural Lighting', website:'https://www.lighting.philips.co.in/', description:"Pioneers of architectural, ambient, and digital lighting systems. Innovating eye-comfort LED luminaires for luxurious interiors.",
+    logoSvg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="currentColor" class="w-full h-12 text-white p-2"><text x="10" y="26" font-family="Sora" font-size="20" font-weight="800" letter-spacing="0.08em">PHILIPS</text><path d="M102,12 Q108,12 108,18 Q108,24 102,24 Q96,24 96,18 Q96,12 102,12 Z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="102" cy="18" r="2" fill="#FF5C67"/></svg>` }
+];
+
+const PRODUCTS = [
+  { id:'sw-lumina-black', name:'Lumina Slate Black Multi-Switch', category:'switches', brandId:'legrand',
+    description:'Milled dark charcoal polycarbonate body featuring integrated micro-LED indicator lights. Soft-click mechanisms provide a beautiful sensory experience.',
+    image:'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600',
+    tags:['Premium Finish','Integrated LED','Luxury Switch'],
+    specs:[{label:'Voltage',value:'250V AC'},{label:'Current Rating',value:'16 Amp'},{label:'Material',value:'High-Density Flame-Retardant Polycarbonate'},{label:'Indicator Glow',value:'Micro LED Red Amber'}],
+    finishes:[{name:'Matte Charcoal Black',hex:'#1C1C1E'},{name:'Metallic Brushed Steel',hex:'#8E8E93'},{name:'Champagne Gold',hex:'#D4AF37'}] },
+  { id:'sw-touch-dimmer', name:'Arteor Glass/Touch Dimmer', category:'switches', brandId:'legrand',
+    description:'Capacitive touch dimmer with elegant circular light halo. Designed for dimmable LEDs or halogen fixtures, maintaining absolute brightness memory.',
+    image:'https://images.unsplash.com/photo-1558211516-deea1b28d73b?auto=format&fit=crop&q=80&w=600',
+    tags:['Touch Control','Halo Indicator','Smart Link'],
+    specs:[{label:'Max Load',value:'300W LED'},{label:'Dimming Type',value:'Leading/Trailing Edge'},{label:'Finish',value:'Frosted Glass White / Slate'}] },
+  { id:'sw-anchor-roma', name:'Roma Classic Chrome Outlet', category:'switches', brandId:'anchor',
+    description:'Classic horizontal 3-Pin socket with double-pole protection. Features child-safe protective shutters and chrome-lined bezel housing.',
+    image:'https://images.unsplash.com/photo-1558211516-deea1b28d73b?auto=format&fit=crop&q=80&w=600',
+    tags:['Roma Series','Child Safe','Chrome Trim'],
+    specs:[{label:'Amperage',value:'6A / 16A Combi'},{label:'Protection',value:'Internal Shutter Guard'},{label:'Service Life',value:'100,000+ Operations'}] },
+  { id:'wire-firlsh', name:'Flame Retardant FR-LSH Copper Wire', category:'wires', brandId:'finolex',
+    description:'Electrolytic grade 99.97% pure copper conductor wire with high oxygen index insulation. Safeguards residences against sudden current overload.',
+    image:'https://images.unsplash.com/photo-1558210405-f3761cc20f2b?auto=format&fit=crop&q=80&w=600',
+    tags:['99.97% Pure Copper','FR-LSH Grade','Eco-Insulated'],
+    specs:[{label:'Conductor Size',value:'1.5 sq mm / 2.5 sq mm'},{label:'Insulation',value:'Special Non-Toxic FR-LSH PVC'},{label:'Length per Roll',value:'90 Meters'},{label:'Withstand Temp',value:'Up to 105°C'}] },
+  { id:'wire-armoured', name:'EHV Steel Wire Armoured Cable', category:'wires', brandId:'kei',
+    description:'Constructed with mechanical shield galvanised steel armor and XLPE insulation. Built specifically for underground power distribution and industrial grids.',
+    image:'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=600',
+    tags:['Armoured Protection','Heavy Duty','XLPE Insulated'],
+    specs:[{label:'Core Count',value:'3 or 4 Core'},{label:'Voltage Grade',value:'1100 Volts'},{label:'Armour Type',value:'Galvanised Steel Round Wire'}] },
+  { id:'light-ring-pendant', name:'Acoustic Halo Floating Pendant Light', category:'lighting', brandId:'philips',
+    description:'Modern circular architecture floating ring emitting 360-degree high-fidelity soft light. Features customizable app-based color temperature and dimming options.',
+    image:'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=600',
+    tags:['Architectural Range','CRI > 90','Smart Triac Dimming'],
+    specs:[{label:'Wattage',value:'45 Watts'},{label:'Lumen Output',value:'4200 Lm'},{label:'Color Temp',value:'3000K-6000K Adjustable'},{label:'Body Finish',value:'Brushed Gold Anodized Aluminum'}] },
+  { id:'light-cob-deep', name:'Trimless Recessed COB Spotlight', category:'lighting', brandId:'philips',
+    description:'Deep anti-glare reflector COB light designed to blend completely within false ceilings. Re-establishes luxury textures with museum-grade light render indices.',
+    image:'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=600',
+    tags:['Anti-Glare Filter','Trimless Cut','Museum Index'],
+    specs:[{label:'Lumen Ratio',value:'95 Lm/W'},{label:'Beam Angle',value:'24° / 36°'},{label:'Glare Index',value:'UGR < 16 (Comfort)'}] },
+  { id:'fan-stealth', name:'Stealth Air Silent Ceiling Fan', category:'fans', brandId:'havells',
+    description:'Hydro-dynamically designed absolute silent ceiling fan with custom matte paint. Equipped with energy-saving BLDC intelligence and a remote key timer.',
+    image:'https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&q=80&w=600',
+    tags:['BLDC Energy Saver','Aero Profile','Zero Sound Design'],
+    specs:[{label:'Air Delivery',value:'280 CMM'},{label:'Max Speed',value:'320 RPM'},{label:'Consumption',value:'26 Watt at high speed'},{label:'Blades Cover',value:'1200 mm Sweep'}] }
+];
+
+/* ===================== STATE ===================== */
+let selectedCategory = 'all';
+let selectedBrandId = null;
+let searchTerm = '';
+let activeFinish = null;
+let includeLED = true;
+let modalQty = 1;
+let currentProduct = null;
+
+/* ===================== INIT ===================== */
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+function init() {
+  // read query params for pre-filtering (from Home page links)
+  const cat = getQueryParam('category');
+  const brand = getQueryParam('brand');
+  const q = getQueryParam('q');
+  if (cat) selectedCategory = cat;
+  if (brand) selectedBrandId = brand;
+  if (q) { searchTerm = q; document.getElementById('searchInput').value = q; }
+
+  // Build category buttons
+  const categoryMap = [
+    { id:'all', label:'All Catalogue' },
+    { id:'switches', label:'Modular Switches' },
+    { id:'wires', label:'Wires & Cables' },
+    { id:'lighting', label:'Lighting Systems' },
+    { id:'fans', label:'Fans & Appliances' }
+  ];
+  const catContainer = document.getElementById('category-buttons');
+  categoryMap.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.dataset.id = cat.id;
+    btn.textContent = cat.label;
+    btn.className = "px-4 py-2 rounded-lg text-xs font-display font-bold uppercase tracking-wider cursor-pointer transition-all";
+    btn.onclick = () => { selectedCategory = cat.id; applyFilters(); };
+    catContainer.appendChild(btn);
+  });
+
+  // Build brand dropdown
+  const brandSelect = document.getElementById('brandSelect');
+  BRANDS.forEach(b => {
+    const opt = document.createElement('option');
+    opt.value = b.id;
+    opt.textContent = b.name;
+    brandSelect.appendChild(opt);
+  });
+  if (selectedBrandId) brandSelect.value = selectedBrandId;
+
+  applyFilters();
+  updateCartBadge();
+}
+
+/* ===================== FILTERING ===================== */
+function getBrandName(brandId) {
+  const b = BRANDS.find(b => b.id === brandId);
+  return b ? b.name : 'Premium Brand';
+}
+
+function applyFilters() {
+  // update category button styles
+  document.querySelectorAll('#category-buttons button').forEach(btn => {
+    if (btn.dataset.id === selectedCategory) {
+      btn.className = "px-4 py-2 rounded-lg text-xs font-display font-bold uppercase tracking-wider cursor-pointer transition-all bg-brand-red text-white shadow-[0_0_12px_rgba(255,92,103,0.3)]";
+    } else {
+      btn.className = "px-4 py-2 rounded-lg text-xs font-display font-bold uppercase tracking-wider cursor-pointer transition-all bg-white/5 text-white/50 hover:bg-white/10 hover:text-white";
+    }
+  });
+
+  const filtered = PRODUCTS.filter(p => {
+    const matchesCategory = selectedCategory === 'all' || p.category === selectedCategory;
+    const matchesBrand = !selectedBrandId || p.brandId === selectedBrandId;
+    const term = searchTerm.toLowerCase();
+    const matchesSearch = p.name.toLowerCase().includes(term) ||
+                           p.description.toLowerCase().includes(term) ||
+                           p.tags.some(t => t.toLowerCase().includes(term));
+    return matchesCategory && matchesBrand && matchesSearch;
+  });
+
+  document.getElementById('resultCount').textContent = filtered.length;
+
+  const clearBtn = document.getElementById('clearFiltersBtn');
+  if (selectedBrandId || selectedCategory !== 'all' || searchTerm) {
+    clearBtn.classList.remove('hidden');
+  } else {
+    clearBtn.classList.add('hidden');
+  }
+
+  const grid = document.getElementById('productsGrid');
+  const empty = document.getElementById('emptyState');
+  grid.innerHTML = '';
+
+  if (filtered.length === 0) {
+    grid.classList.add('hidden');
+    empty.classList.remove('hidden');
+    return;
+  }
+  grid.classList.remove('hidden');
+  empty.classList.add('hidden');
+
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.className = "group beveled-glow rounded-xl bg-[#1b1b1f]/80 border border-white/5 p-4 flex flex-col justify-between h-[440px] shadow-xl hover:border-white/15 hover:bg-[#1f1f24] transition-all relative";
+    card.innerHTML = `
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full bg-brand-primary/5 blur-[40px] pointer-events-none group-hover:bg-[#1d2d5c]/15 transition-all"></div>
+      <div>
+        <div class="flex items-center justify-between text-[10px] font-mono mb-3 relative z-10">
+          <span class="text-brand-primary tracking-widest font-bold uppercase">${getBrandName(p.brandId)}</span>
+          <span class="text-white/45 bg-white/5 px-2 py-0.5 rounded border border-white/5 uppercase">${p.category}</span>
+        </div>
+        <div class="w-full h-44 rounded-lg bg-brand-dark/90 border border-white/5 flex items-center justify-center p-2 mb-4 overflow-hidden relative z-10">
+          <img src="${p.image}" alt="${p.name}" referrerpolicy="no-referrer" class="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 opacity-80">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60"></div>
+        </div>
+        <h3 class="font-display font-extrabold text-base text-white tracking-tight leading-snug group-hover:text-brand-primary transition-colors relative z-10">${p.name}</h3>
+        <p class="text-white/50 text-xs mt-1.5 line-clamp-2 leading-relaxed font-sans relative z-10">${p.description}</p>
+        <div class="flex flex-wrap gap-1 mt-3 relative z-10">
+          ${p.tags.slice(0,2).map(t => `<span class="text-[9px] font-sans font-bold bg-[#1d2d5c]/50 text-white/50 px-2 py-0.5 rounded tracking-wide border border-white/5">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between gap-2.5 relative z-10">
+        <button onclick="openModal('${p.id}')" class="flex-1 flex items-center justify-center space-x-1.5 bg-white/5 hover:bg-white/10 text-white font-display font-semibold text-xs py-2 px-3 rounded-lg transition-colors cursor-pointer">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>Technical Specs</span>
+        </button>
+        <button onclick="addToInquiry('${p.id}', 1)" class="flex-none p-2 rounded-lg bg-brand-red text-white hover:bg-brand-red/90 transition-all cursor-pointer shadow-[0_2px_8px_rgba(255,92,103,0.2)]" title="Add to quote inquiries">
+          <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg>
+        </button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function clearFilters() {
+  selectedBrandId = null;
+  selectedCategory = 'all';
+  searchTerm = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('brandSelect').value = '';
+  applyFilters();
+}
+
+/* ===================== CART ===================== */
+function getCart() {
+  try {
+    const saved = localStorage.getItem('sri_vasudev_inquiry_cart');
+    return saved ? JSON.parse(saved) : [];
+  } catch { return []; }
+}
+function setCart(cart) {
+  try { localStorage.setItem('sri_vasudev_inquiry_cart', JSON.stringify(cart)); } catch {}
+  updateCartBadge();
+}
+function updateCartBadge() {
+  const cart = getCart();
+  const count = cart.reduce((acc, item) => acc + (item.quantity || 0), 0);
+  const badge = document.getElementById('cart-badge');
+  if (count > 0) { badge.textContent = count; badge.classList.remove('hidden'); }
+  else { badge.classList.add('hidden'); }
+}
+function addToInquiry(productId, qty, finish) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) return;
+  const cart = getCart();
+  const idx = cart.findIndex(item => item.product.id === productId && item.selectedFinish === finish);
+  if (idx > -1) {
+    cart[idx].quantity += qty;
+  } else {
+    cart.push({ product, quantity: qty, selectedFinish: finish });
+  }
+  setCart(cart);
+  // simple visual feedback
+  showToast(`Added "${product.name}" to your inquiry checklist`);
+}
+function showToast(msg) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] bg-[#1b1b1f] border border-white/10 text-white text-xs font-sans px-4 py-2.5 rounded-lg shadow-2xl transition-opacity duration-300";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = '1';
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => { toast.style.opacity = '0'; }, 2200);
+}
+
+/* ===================== MODAL ===================== */
+function openModal(productId) {
+  const p = PRODUCTS.find(p => p.id === productId);
+  if (!p) return;
+  currentProduct = p;
+  modalQty = 1;
+  includeLED = true;
+  activeFinish = p.finishes && p.finishes.length ? p.finishes[0].name : null;
+
+  document.getElementById('modalBrand').textContent = getBrandName(p.brandId);
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalImage').src = p.image;
+  document.getElementById('modalImage').alt = p.name;
+  document.getElementById('modalDescription').textContent = p.description;
+  document.getElementById('modalQty').textContent = modalQty;
+
+  // specs table
+  const specsTable = document.getElementById('specsTable');
+  specsTable.innerHTML = p.specs.map(s => `
+    <div class="flex p-2.5">
+      <span class="w-24 text-white/40 font-semibold shrink-0">${s.label}</span>
+      <span class="text-white/80">${s.value}</span>
+    </div>
+  `).join('');
+
+  // finish customizer
+  const customizer = document.getElementById('finishCustomizer');
+  const ledIndicator = document.getElementById('ledIndicator');
+  if (p.category === 'switches' && p.finishes) {
+    customizer.classList.remove('hidden');
+    document.getElementById('activeFinishLabel').textContent = activeFinish;
+    const swatches = document.getElementById('finishSwatches');
+    swatches.innerHTML = p.finishes.map(f => `
+      <button onclick="setFinish('${f.name}')" style="background-color:${f.hex}" data-finish="${f.name}"
+        class="w-7 h-7 rounded-full border cursor-pointer transition-transform ${activeFinish === f.name ? 'border-brand-red scale-110' : 'border-white/10 hover:scale-105'}"
+        title="${f.name}"></button>
+    `).join('');
+    includeLED = true;
+    document.getElementById('ledToggle').className = "w-9 h-5 rounded-full p-0.5 transition-colors cursor-pointer bg-brand-red";
+    document.getElementById('ledKnob').className = "bg-white w-4 h-4 rounded-full transition-transform translate-x-4";
+    ledIndicator.classList.remove('hidden');
+  } else {
+    customizer.classList.add('hidden');
+    ledIndicator.classList.add('hidden');
+  }
+
+  document.getElementById('productModal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('productModal').classList.add('hidden');
+  currentProduct = null;
+}
+
+function setFinish(name) {
+  activeFinish = name;
+  document.getElementById('activeFinishLabel').textContent = name;
+  document.querySelectorAll('#finishSwatches button').forEach(btn => {
+    if (btn.dataset.finish === name) {
+      btn.className = btn.className.replace('border-white/10 hover:scale-105','border-brand-red scale-110');
+    } else {
+      btn.className = btn.className.replace('border-brand-red scale-110','border-white/10 hover:scale-105');
+    }
+  });
+}
+
+function toggleLED() {
+  includeLED = !includeLED;
+  const toggle = document.getElementById('ledToggle');
+  const knob = document.getElementById('ledKnob');
+  const indicator = document.getElementById('ledIndicator');
+  if (includeLED) {
+    toggle.className = "w-9 h-5 rounded-full p-0.5 transition-colors cursor-pointer bg-brand-red";
+    knob.className = "bg-white w-4 h-4 rounded-full transition-transform translate-x-4";
+    if (currentProduct && currentProduct.category === 'switches') indicator.classList.remove('hidden');
+  } else {
+    toggle.className = "w-9 h-5 rounded-full p-0.5 transition-colors cursor-pointer bg-white/10";
+    knob.className = "bg-white w-4 h-4 rounded-full transition-transform translate-x-0";
+    indicator.classList.add('hidden');
+  }
+}
+
+function changeQty(delta) {
+  modalQty = Math.max(1, modalQty + delta);
+  document.getElementById('modalQty').textContent = modalQty;
+}
+
+function addFromModal() {
+  if (!currentProduct) return;
+  const finish = currentProduct.category === 'switches' ? activeFinish : undefined;
+  addToInquiry(currentProduct.id, modalQty, finish);
+  closeModal();
+}
+
+/* ===================== HEADER UI ===================== */
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const open = document.getElementById('menu-icon-open');
+  const close = document.getElementById('menu-icon-close');
+  menu.classList.toggle('hidden');
+  open.classList.toggle('hidden');
+  close.classList.toggle('hidden');
+}
+function toggleSearch() {
+  const box = document.getElementById('search-box');
+  box.classList.toggle('hidden');
+  box.classList.toggle('flex');
+  if (!box.classList.contains('hidden')) document.getElementById('header-search-input').focus();
+}
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Sri Vasudev Electricals',
+      text: "Authorized dealer of India's leading premium electrical brands like Legrand, Finolex, Philips, Havells.",
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Application link copied to clipboard!');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
