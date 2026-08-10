@@ -1,0 +1,9 @@
+# robots.txt — Sri Vasudev Electricals
+# https://srivasudevelectricals.com
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://srivasudevelectricals.com/sitemap.xml
